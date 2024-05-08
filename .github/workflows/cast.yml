@@ -9,4 +9,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Output Information
-              run: echo ${{ github.event.release }}
+              run: echo ${{ toJSON(github.event.release) }}
+c
