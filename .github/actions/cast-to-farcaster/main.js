@@ -1,4 +1,5 @@
 const { NeynarAPIClient } = require("@neynar/nodejs-sdk");
+const core = require("@actions/core");
 
 async function run() {
     // Input values to the action
