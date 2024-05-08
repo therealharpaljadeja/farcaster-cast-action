@@ -6,11 +6,12 @@ async function run() {
     let message = core.getInput("message", { required: true });
     let signerUUID = core.getInput("signer-uuid", { required: true });
     let neynarApiKey = core.getInput("neynar-api-key", { required: true });
+    let releaseUrl = core.getInput("release-url", { required: true });
 
     const client = new NeynarAPIClient(neynarApiKey);
 
     try {
-        await client.publishCast(signerUUID, message);
+        await client.publishCast(signerUUID, message, { embeds: [releaseUrl] });
     } catch (error) {
         core.error("Something went wrong!");
     }

@@ -10,6 +10,8 @@ inputs:
     neynar-api-key:
         description: "Neynar API Key to cast"
         required: true
+    release-url:
+        description: "Url to Release Details Page"
 runs:
     using: "node20"
     main: "main.js"

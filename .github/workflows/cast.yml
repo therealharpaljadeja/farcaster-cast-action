@@ -18,6 +18,7 @@ jobs:
             - name: Cast to Farcaster
               uses: ./.github/actions/cast-to-farcaster
               with:
-                  message: "${{ github.event.release.name }}\n${{ github.event.release.html_url }}"
+                  message: "${{ github.event.release.name }}"
                   signer-uuid: ${{ secrets.SIGNER_UUID }}
                   neynar-api-key: ${{ secrets.NEYNAR_API_KEY }}
+                  release-url: ${{ github.event.release.html_url }}
