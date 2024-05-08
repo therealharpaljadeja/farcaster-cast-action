@@ -9,4 +9,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Output Information
-              run: echo ${{ github.event.action }}
+              run: echo ${{ github.event.release }}
