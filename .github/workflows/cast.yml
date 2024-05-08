@@ -10,4 +10,3 @@ jobs:
         steps:
             - name: Output Information
               run: echo ${{ toJSON(github.event.release) }}
-c
