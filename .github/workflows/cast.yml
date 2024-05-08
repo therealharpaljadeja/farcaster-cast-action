@@ -5,13 +5,15 @@ on:
         types: [published]
 
 jobs:
-    output-information:
+    cast-release-to-farcaster:
         runs-on: ubuntu-latest
         steps:
             - name: Output Information
               run: |
                   echo "${{ toJSON(github.event.release.html_url) }}"
                   echo "${{ toJSON(github.event.release.body) }}"
+            - name: Get code
+              uses: actions/checkout@v3
             - name: Cast to Farcaster
               uses: ./.github/actions/cast-to-farcaster
               with:
