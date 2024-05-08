@@ -13,7 +13,7 @@ jobs:
                   echo "${{ toJSON(github.event.release.html_url) }}"
                   echo "${{ toJSON(github.event.release.body) }}"
             - name: Cast to Farcaster
-              uses: /.github/actions/cast-to-farcaster
+              uses: ./.github/actions/cast-to-farcaster
               with:
                   message: "Testing 👀"
                   signer-uuid: ${{ secrets.SIGNER_UUID }}
