@@ -5,8 +5,8 @@ on:
         types: [published]
 
 jobs:
-    outputInformation:
+    output-information:
         runs-on: ubuntu-latest
         steps:
             - name: Output Information
-              run: echo ${{ github }}
+              run: echo ${{ github.event.action }}
