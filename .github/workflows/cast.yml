@@ -9,4 +9,12 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Output Information
-              run: echo "${{ toJSON(github.event.release) }}"
+              run: |
+                  echo "${{ toJSON(github.event.release.html_url) }}"
+                  echo "${{ toJSON(github.event.release.body) }}"
+            - name: Cast to Farcaster
+              uses: /.github/actions/cast-to-farcaster
+              with:
+                  message: "Testing 👀"
+                  signer-uuid: ${{ secrets.SIGNER_UUID }}
+                  neynar-api-key: ${{ secrets.NEYNAR_API_KEY }}

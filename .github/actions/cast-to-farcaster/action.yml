@@ -1,0 +1,15 @@
+name: "Cast to Farcaster"
+description: "Cast to Farcaster"
+inputs:
+    message:
+        description: "Message to cast"
+        required: true
+    signer-uuid:
+        description: "Signer UUID required to cast on behalf of a profile"
+        required: true
+    neynar-api-key:
+        description: "Neynar API Key to cast"
+        required: true
+runs:
+    using: "node20"
+    main: "main.js"
