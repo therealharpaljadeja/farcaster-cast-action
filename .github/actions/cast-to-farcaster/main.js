@@ -10,7 +10,9 @@ async function run() {
 
     const client = new NeynarAPIClient(neynarApiKey);
 
-    await client.publishCast(signerUUID, message, { embeds: [releaseUrl] });
+    await client.publishCast(signerUUID, message, {
+        embeds: [{ url: releaseUrl }],
+    });
 }
 
 run();
