@@ -1,0 +1,12 @@
+name: Cast to Farcaster
+
+on:
+    release:
+        types: [published]
+
+jobs:
+    outputInformation:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Output Information
+              run: echo ${{ github }}
