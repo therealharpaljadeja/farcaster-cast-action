@@ -22,3 +22,4 @@ jobs:
                   signer-uuid: ${{ secrets.SIGNER_UUID }}
                   neynar-api-key: ${{ secrets.NEYNAR_API_KEY }}
                   release-url: ${{ github.event.release.html_url }}
+                  channel-id: "degenx"
