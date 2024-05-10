@@ -12,10 +12,9 @@ async function run() {
     let embeds = embedsCS.split(",").map((embed) => {
         if (embed.startsWith("https://")) return { url: embed };
 
-        embed = embed.replaceAll("(", "");
-        let [fid, hash] = embed.split(",");
+        embed = embed.replaceAll("(", "").replaceAll(")", "");
 
-        console.log(fid, hash);
+        let [fid, hash] = embed.split("_");
 
         return { cast_id: { fid, hash } };
     });
