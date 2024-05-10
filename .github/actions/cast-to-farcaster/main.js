@@ -15,13 +15,15 @@ async function run() {
         embed.replaceAll("(", "");
         let [fid, hash] = embed.split(",");
 
+        console.log(fid, hash);
+
         return { cast_id: { fid, hash } };
     });
 
     const client = new NeynarAPIClient(neynarApiKey);
 
     await client.publishCast(signerUUID, message, {
-        embeds: embedsCS ?? embeds,
+        embeds: embedsCS ? embeds : [],
         channelId: channelId ?? undefined,
     });
 }
