@@ -6,13 +6,22 @@ async function run() {
     let message = core.getInput("message", { required: true });
     let signerUUID = core.getInput("signer-uuid", { required: true });
     let neynarApiKey = core.getInput("neynar-api-key", { required: true });
-    let releaseUrl = core.getInput("release-url");
+    let embedsCS = core.getInput("embeds");
     let channelId = core.getInput("channel-id");
+
+    let embeds = embedsCS.split(",").map((embed) => {
+        if (embed.startsWith("https://")) return { url: embed };
+
+        embed.replaceAll("(", "");
+        let [fid, hash] = embed.split(",");
+
+        return { cast_id: { fid, hash } };
+    });
 
     const client = new NeynarAPIClient(neynarApiKey);
 
     await client.publishCast(signerUUID, message, {
-        embeds: [{ url: releaseUrl ?? undefined }],
+        embeds: embedsCS ?? embeds,
         channelId: channelId ?? undefined,
     });
 }

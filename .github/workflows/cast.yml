@@ -17,5 +17,5 @@ jobs:
                   message: "${{ github.event.release.name }}"
                   signer-uuid: ${{ secrets.SIGNER_UUID }}
                   neynar-api-key: ${{ secrets.NEYNAR_API_KEY }}
-                  release-url: ${{ github.event.release.html_url }}
+                  embeds: "${{ github.event.release.html_url }},(17979,0x6fd52801e55ca265f8cbbc40293ff020051b735f)"
                   channel-id: "degenx"
