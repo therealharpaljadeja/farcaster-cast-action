@@ -12,7 +12,7 @@ async function run() {
     let embeds = embedsCS.split(",").map((embed) => {
         if (embed.startsWith("https://")) return { url: embed };
 
-        embed.replaceAll("(", "");
+        embed = embed.replaceAll("(", "");
         let [fid, hash] = embed.split(",");
 
         console.log(fid, hash);
