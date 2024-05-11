@@ -12,7 +12,7 @@ jobs:
             - name: Get code
               uses: actions/checkout@v3
             - name: Cast to Farcaster
-              uses: ./.github/actions/cast-to-farcaster
+              uses: therealharpaljadeja/farcaster-cast-github-action
               with:
                   message: "${{ github.event.release.name }}"
                   signer-uuid: ${{ secrets.SIGNER_UUID }}
